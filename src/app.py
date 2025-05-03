@@ -254,26 +254,6 @@ def api_execute_command(request: ExecuteCommandRequest):
             code=10000
         )
 
-@app.get("/browse-use/server/portal")
-def get_browse_use_portal(task_id: str = Query(...)):
-    """Get the browse-use server portal URL for a specific task."""
-    # Mock URL for demonstration purposes
-    mock_url = "http://13.251.103.99:9000/"
-    return create_response(
-        data={"url": mock_url},
-        message="Browse-use server portal URL retrieved successfully"
-    )
-
-@app.get("/novnc/server/portal")
-def get_novnc_portal(task_id: str = Query(...)):
-    """Get the noVNC server portal URL for a specific task."""
-    # Mock URL for demonstration purposes
-    mock_url = "http://13.251.103.99:9001/"
-    return create_response(
-        data={"url": mock_url},
-        message="noVNC server portal URL retrieved successfully"
-    )
-
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=9100, reload=True)
