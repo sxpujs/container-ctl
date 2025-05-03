@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "container-ctl"
+version = "2025.05"
+dependencies = [
+    "fastapi==0.104.1",
+    "uvicorn==0.23.2",
+    "pydantic==2.4.2",
+    "docker==7.1.0",
+    "python-multipart==0.0.20",
+]
+requires-python = ">=3.12"
+description = "container management"
+
+[project.urls]
+Repository = "https://github.com/sxpujs/container-ctl"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
